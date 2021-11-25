@@ -166,3 +166,15 @@ sudo make install
 ## MenuMaker
 
 <TODO>
+
+## QEMU
+
+### Dependencies
+
+none
+
+### Installation
+
+```bash
+sudo prt-get depinst qemu
+```
