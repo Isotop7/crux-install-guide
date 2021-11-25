@@ -3,6 +3,60 @@
 - Supported Crux version: `3.6`
 - Install steps may also work on other Crux versions
 
+## Install/update kernel
+
+Info: https://www.kernel.org/
+
+Tested version: ---
+
+### Dependencies
+
+none
+
+### Installation
+
+```bash
+# Switch to root user
+sudo su
+
+# Set kernel version
+VERSION="5.10.81"
+
+# Move to /usr/src dir
+cd /usr/src
+
+# Get kernel source
+wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${VERSION}.tar.xz
+
+# Extract kernel source
+unxz linux-${VERSION}.tar.xz
+
+# Untar kernel source
+tar -xf linux-${VERSION}.tar
+
+# Remove tar file and cd to new kernel source
+rm linux-${VERSION}.tar && cd linux-${VERSION}
+
+# Get old kernel config
+zcat /proc/config.gz > .config
+
+# If needed, edit kernel config
+make menuconfig
+
+# Build kernel
+make all
+
+# Build modules
+make modules_install
+
+# Copy new kernel and system.map
+cp arch/x86/boot/bzImage /boot/vmlinuz-${VERSION}
+cp System.map /boot
+
+# Update grub
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 ## Thunar
 
 Info: https://docs.xfce.org/xfce/thunar/start
