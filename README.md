@@ -1,6 +1,7 @@
 # Crux install guide
 
-Tested on Crux version 3.6
+- Supported Crux version: `3.6`
+- Install steps may also work on other Crux versions
 
 ## Thunar
 
@@ -35,3 +36,14 @@ sudo prt-get depinst intltool
 ## Polybar
 
 ## Urxvt
+
+## obconf
+
+## lxappearance
+
+## Discord
+
+## mtPaint
+
+## MenuMaker
+
