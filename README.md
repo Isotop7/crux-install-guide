@@ -1,7 +1,7 @@
-# Crux install guide
+# CRUX install guide
 
-- Supported Crux version: `3.6`
-- Install steps may also work on other Crux versions
+- Supported CRUX version: `3.6`
+- Install steps may also work on other CRUX versions
 
 ## Install/update kernel
 
