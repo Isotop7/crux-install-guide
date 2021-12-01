@@ -40,6 +40,9 @@ rm linux-${VERSION}.tar && cd linux-${VERSION}
 # Get old kernel config
 zcat /proc/config.gz > .config
 
+# Optional: If your switching between major and minor branches, run `make oldconfig` first to see new kernel features
+make oldconfig
+
 # If needed, edit kernel config
 make menuconfig
 
