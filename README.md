@@ -106,7 +106,25 @@ sudo prt-get depinst intltool
 
 ## Polybar
 
-<TODO>
+### Fixes
+
+#### Use shutdown commands without sudo
+
+Add the following line to your sudoers file in `/etc/sudoers` with `<username>` being your username:
+
+```
+<username> ALL=(ALL) NOPASSWD: /sbin/poweroff,/sbin/reboot,/sbin/shutdown
+```
+
+In your polybar config, use the following calls to restart and shutdown:
+
+```bash
+# Shutdown
+sudo /sbin/shutdown -Ph now
+
+# Reboot
+sudo /sbin/reboot
+```
 
 ## Urxvt
 
