@@ -20,7 +20,7 @@ none
 sudo su
 
 # Set kernel version
-VERSION="5.15.8"
+VERSION="5.15.12"
 
 # Move to /usr/src dir
 cd /usr/src
