@@ -60,49 +60,34 @@ cp System.map /boot
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## Thunar
+## Xfce
 
-Info: https://docs.xfce.org/xfce/thunar/start
+Info: http://dlc.casita.net/~dlc/CRUX/xfce_4.16/
 
-Tested version: `4.17.1`
+Tested version: Xfce 4.16
 
-### Dependencies:
+### Dependencies
 
-#### intltool
+none
 
-Can be installed from ports `/usr/ports/opt`:
+### Installation
 
 ```bash
-sudo prt-get depinst intltool
+# Downloads ports file
+wget http://dlc.casita.net/~dlc/CRUX/xfce_4.16/.xfce_4.16.httpup -O xfce_4.16.httpup
+
+# Copy file to ports dir
+sudo cp xfce_4.16.httpup /usr/ports
+
+# Add new directory to prt-get.conf
+sudo echo "prtdir /usr/ports/xfce_4.16" >> /etc/prt-get.conf
+
+# Update ports
+sudo ports -u
+
+# Install basic packages
+sudo prt-get depinst xfdesktop xfce4-settings xfwm4 xfce4-session
 ```
-
-#### perl
-
-<TODO>
-
-#### GTK+
-
-<TODO>
-
-#### GLib
-
-<TODO>
-
-#### exo
-
-<TODO>
-
-#### libxfce4util
-
-<TODO>
-
-#### libxfce4ui
-
-<TODO>
-
-#### xfconf
-
-<TODO>
 
 ## Polybar
 
